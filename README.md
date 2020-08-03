@@ -81,10 +81,46 @@ docker rmi dockersamples/static-site
 # ----------------------------------------------------
 # END EJEMPLO NGINX ESTATICO 
 # ----------------------------------------------------
-
-
 ```
 
+Ejemplo Dockerfile
+--------------------
+
+Todo el código de este ejemplo se encuentra en el dir **python-simple-flask**.
+
+
+Dockerfile
+```
+FROM alpine:3.12.0
+
+# si no existe el dir lo crea
+# y entra en él
+# todo esto en la imagen de alpine
+WORKDIR /usr/src/app
+
+# copia todo el directorio actual (host)
+# al dir actual de la imagen de contenedor
+COPY . .
+# elimina el archivo que no es necesario
+RUN rm Dockerfile
+
+# instala las dependencias
+RUN apk add --update py3-pip
+RUN pip install --no-cache-dir -r ./requirements.txt
+
+# expone el puerto
+EXPOSE 5000
+# igualmente cuando se corra el contenedor se debe
+# usar -P ó -p 5000:5000
+# docker run -d -P zero/flask
+
+# solo debe existir un CMD dentro del Dockerfile
+# este ejecuta el proyecto
+CMD ["python3", "./hello.py"]
+
+# finalmente construir la imagen
+# docker build -t zero/flask .
+```
 
 Fuentes:
 ---------
