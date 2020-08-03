@@ -92,4 +92,5 @@ Fuentes:
 - https://podman.io/ 
 - https://docs.docker.com/get-started/overview/ 
 - https://github.com/docker/labs/tree/master/beginner 
+- Mouat, A. (2015). Using Docker. O'reilly. 
 
