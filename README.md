@@ -84,3 +84,12 @@ docker rmi dockersamples/static-site
 
 
 ```
+
+
+Fuentes:
+---------
+
+- https://podman.io/ 
+- https://docs.docker.com/get-started/overview/ 
+- https://github.com/docker/labs/tree/master/beginner 
+
