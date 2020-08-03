@@ -72,6 +72,8 @@ docker rm sitio-estatico
 # un shortcut de lo anterior sería
 # donde -f o --force
 docker rm -f sitio-estatico
+# también puede pasar los nombre de varios contenedores a la vez
+docker rm -f contenedor1 contenedor2 contenedor3
 
 # elimina imagen
 docker rmi dockersamples/static-site
