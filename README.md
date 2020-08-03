@@ -90,7 +90,7 @@ Todo el código de este ejemplo se encuentra en el dir **python-simple-flask**.
 
 
 Dockerfile
-```
+```Dockerfile
 FROM alpine:3.12.0
 
 # si no existe el dir lo crea
