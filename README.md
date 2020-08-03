@@ -26,4 +26,16 @@ Comandos
 # utiliza Busybox
 docker pull alpine:3.12.0 
 
+# lista todas las imágenes en tu sistema
+docker images
+
+# corre la imagen del contenedor especificada
+# y ejecuta el comando
+# luego sale
+docker run alpine:3.12.0 ls -l
+docker run alpine:3.12.0 echo "hola mundo"
+# si deseo correr una terminal 
+# debe utilizar los parametros -i (modo interactivo) y -t (tty)
+docker run -it alpine:3.12.0 /bin/sh  
+
 ```
