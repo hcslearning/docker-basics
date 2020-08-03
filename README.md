@@ -51,4 +51,34 @@ docker run alpine:3.12.0 echo "hola mundo"
 docker run -it alpine:3.12.0 /bin/sh  
 # muestra más información sobre la imagen
 docker inspect alpine:3.12.0
+
+# ----------------------------------------------------
+# EJEMPLO NGINX ESTÁTICO
+# ----------------------------------------------------
+# -d crea un contenedor desatachado de nuestra terminal (sigue corriendo después de cerrar la terminal)
+# -P publica todos los puertos expuestos a puertos aleatorios del Host
+# --name permite especificar un nombre para el contenedor y hacer más fácil su referencia
+docker run -d -P --name sitio-estatico dockersamples/static-site
+# muestra los procesos que están corriendo actualmente
+docker ps
+# muestra todos los procesos (corriendo y terminados)
+docker ps --all
+# muestra los puertos expuestos por el contenedor
+docker port sitio-estatico
+
+# detiene y luego elimina el contenedor
+docker stop sitio-estatico
+docker rm sitio-estatico
+# un shortcut de lo anterior sería
+# donde -f o --force
+docker rm -f sitio-estatico
+
+# elimina imagen
+docker rmi dockersamples/static-site
+
+# ----------------------------------------------------
+# END EJEMPLO NGINX ESTATICO 
+# ----------------------------------------------------
+
+
 ```
