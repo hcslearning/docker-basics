@@ -19,9 +19,13 @@ alias docker=podman
 Terminología
 -------------
 **Imágenes**: El sistema de archivos y configuración de la aplicación usada para crear contenedores.
+
 **Contenedores**: Instancias de imágenes. Comparten Kernel con otras imágenes y corren como procesos aislados.
+
 **Docker Daemon**: El servicio (background service) que gestiona la construcción, ejecución y distribución de contenedores.
+
 **Docker Client**: El comando (CLI) que permite interactuar con el Daemon.
+
 **Docker Store**: El registro de imágenes de Docker.
 
 Comandos
