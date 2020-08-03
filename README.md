@@ -16,6 +16,14 @@ Contenedores pueden correr como un usuario normal (**rootless**), no es necesari
 alias docker=podman
 ```
 
+Terminología
+-------------
+**Imágenes**: El sistema de archivos y configuración de la aplicación usada para crear contenedores.
+**Contenedores**: Instancias de imágenes. Comparten Kernel con otras imágenes y corren como procesos aislados.
+**Docker Daemon**: El servicio (background service) que gestiona la construcción, ejecución y distribución de contenedores.
+**Docker Client**: El comando (CLI) que permite interactuar con el Daemon.
+**Docker Store**: El registro de imágenes de Docker.
+
 Comandos
 ----------
 ```bash
@@ -37,5 +45,6 @@ docker run alpine:3.12.0 echo "hola mundo"
 # si deseo correr una terminal 
 # debe utilizar los parametros -i (modo interactivo) y -t (tty)
 docker run -it alpine:3.12.0 /bin/sh  
-
+# muestra más información sobre la imagen
+docker inspect alpine:3.12.0
 ```
