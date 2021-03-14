@@ -88,6 +88,17 @@ docker rmi dockersamples/static-site
 
 
 # ----------------------------------------------------
+# Ejemplo carga de Dump de MongoDB en Contenedor
+# ----------------------------------------------------
+podman run -d -p 127.0.0.1:27017:27017 --name basedatos -e MONGO_INITDB_ROOT_USERNAME=mongoadmin -e MONGO_INITDB_ROOT_PASSWORD=secret mongo
+# entra en mongoshell
+mongo mongodb://mongoadmin:secret@127.0.0.1:27017
+# carga dump
+mongorestore mongodb://mongoadmin:secret@127.0.0.1:27017/mibd dump
+
+
+
+# ----------------------------------------------------
 # Variables de Entorno
 # ----------------------------------------------------
 docker run -d -P --name some-mongo -e MONGO_INITDB_ROOT_USERNAME=mongoadmin -e MONGO_INITDB_ROOT_PASSWORD=secret mongo
