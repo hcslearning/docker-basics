@@ -52,6 +52,14 @@ docker run -it alpine:3.12.0 /bin/sh
 # muestra más información sobre la imagen
 docker inspect alpine:3.12.0
 
+
+
+# ----------------------------------------------------
+# EXEC
+# ----------------------------------------------------
+# ejecuta la terminal en un contenedor llamado "contenedor" que ya está andando
+docker exec -it contenedor /bin/bash
+
 # ----------------------------------------------------
 # EJEMPLO NGINX ESTÁTICO
 # ----------------------------------------------------
@@ -77,6 +85,19 @@ docker rm -f contenedor1 contenedor2 contenedor3
 
 # elimina imagen
 docker rmi dockersamples/static-site
+
+
+# ----------------------------------------------------
+# Variables de Entorno
+# ----------------------------------------------------
+docker run -d -P --name some-mongo -e MONGO_INITDB_ROOT_USERNAME=mongoadmin -e MONGO_INITDB_ROOT_PASSWORD=secret mongo
+
+
+# ----------------------------------------------------
+# Montar directorio
+# ----------------------------------------------------
+docker run --name contenedor -v /home/zero/Backups:/tmp/mybackups mongo
+
 
 # ----------------------------------------------------
 # END EJEMPLO NGINX ESTATICO 
