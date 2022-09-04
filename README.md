@@ -158,6 +158,9 @@ CMD ["python3", "./hello.py"]
 
 Network
 --------------------
+
+**Note**: Non-root ports 1024 through 65535
+
 ```
 docker network create --driver bridge alpine-net
 docker run -dit --name alpine1 --network alpine-net alpine ash
