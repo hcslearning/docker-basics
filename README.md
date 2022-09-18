@@ -171,6 +171,18 @@ docker container attach alpine2
 # ping -c 3 alpine1 
 ```
 
+Systemd
+---------------
+fuente: https://github.com/containers/podman/issues/13731 
+
+Example: 
+```
+podman generate systemd --files --name bd-mysql 
+# put file on $HOME/.config/systemd/user 
+systemctl --user enable container-bd-mysql.service
+# reinicia el equipo para probar 
+```
+
 
 Fuentes:
 ---------
