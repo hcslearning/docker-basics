@@ -183,6 +183,33 @@ systemctl --user enable container-bd-mysql.service
 # reinicia el equipo para probar 
 ```
 
+podman-compose
+------------------
+
+Ejemplo de **docker-compose.yml:** 
+```
+version: '3'
+services:
+  php:
+    image: php:7.2.11-apache 
+    ports:
+      - 8080:80 
+    links:
+      - mariadb:mariadb
+    volumes:
+      - /var/www/html/guapisimascl:/var/www/html
+  mariadb:
+    image: mariadb:10.3.11
+    environment:
+      MYSQL_ROOT_PASSWORD: Duocadmin2017
+```
+
+Luego ejecutas:
+
+```
+podman-compose up -d 
+```
+
 
 Fuentes:
 ---------
