@@ -180,6 +180,7 @@ Example:
 podman generate systemd --files --name bd-mysql 
 # put file on $HOME/.config/systemd/user 
 systemctl --user enable container-bd-mysql.service
+loginctl enable-linger <username>
 # reinicia el equipo para probar 
 ```
 
