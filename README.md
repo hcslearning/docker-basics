@@ -162,13 +162,16 @@ Network
 **Note**: Non-root ports 1024 through 65535
 
 ```
-docker network create --driver bridge alpine-net
-docker run -dit --name alpine1 --network alpine-net alpine ash
-docker run -dit --name alpine2 --network alpine-net alpine ash
-docker container attach alpine1
-# ping -c 3 alpine2 
-docker container attach alpine2
-# ping -c 3 alpine1 
+# podman network rm alpine-net
+podman network create --driver bridge alpine-net
+podman run -dit --name alpine1 --network alpine-net --network-alias alpine-node-1 alpine ash
+podman run -dit --name alpine2 --network alpine-net  --network-alias alpine-node-2 alpine ash
+podman container attach alpine1
+# ping -c 3 alpine2
+# ping -c 3 alpine-node-2  
+podman container attach alpine2
+# ping -c 3 alpine1
+# ping -c 3 alpine-node-1  
 ```
 
 Systemd
