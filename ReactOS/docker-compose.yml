@@ -1,0 +1,12 @@
+version: '3'
+services:
+  qemu-reactos:
+    image: docker.io/hectorm/qemu-reactos:latest
+    container_name: qemu-reactos
+    devices:
+      - /dev/kvm
+    ports:
+      - 127.0.0.1:5900:5900/tcp
+      - 127.0.0.1:6080:6080/tcp
+    restart: unless-stopped
+
